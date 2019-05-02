@@ -1,0 +1,18 @@
+Procedural steps for opening and testing DailyCodingProblems in C++
+
+-- Startup sequence
+ProblemSelector class should handle a request to open a specified problem
+1) Selector should accept input of problem name
+2) If name matches existing problem -> open that problem (ExistingProblemInitializer)
+3) If name does not match -> prompt to create new problem (NewProblemInitializer)
+4) If no name was provided display a list of all problems for user to select
+
+-- Existing problem was selected
+ExistingProblemInitializer class should be able to
+1) open the selected problem file in VS code to edit
+2) compile and run the selected problem
+
+-- New problem name was provided
+NewProblemInitializer class should handle a request to create a new problem
+1) create a source code file with a properly formatted file name
+2) open the created file in VS code for editing
