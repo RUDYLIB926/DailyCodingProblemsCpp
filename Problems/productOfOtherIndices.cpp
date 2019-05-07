@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include <string>
 #include <numeric>
@@ -11,16 +12,18 @@ For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120
 */
 
 std::vector<int> productOfOtherIndices(std::vector<int> input);
+std::vector<std::string> split(const std::string& s, char delimiter);
 
 int main(){
-    std::vector<int> input1 {1,2,3,4,5};
-    std::vector<int> products1 = productOfOtherIndices(input1);
-    for (auto x: products1) std::cout << x << " ";
-    std::cout << std::endl;
-
-    std::vector<int> input2 {3,2,1};
-    std::vector<int> products2 = productOfOtherIndices(input2);
-    for (auto x: products2) std::cout << x << " ";
+    std::cout << "Enter the integers for the array seprated by spaces: " << std::endl;
+    std::string listAsString = "";
+    std::getline(std::cin, listAsString);
+    std::vector<std::string> listAsStringVector = split(listAsString, ' ');
+    std::vector<int> input(listAsStringVector.size());
+    for (int i = 0; i < listAsStringVector.size(); i++) input[i] = std::stoi(listAsStringVector[i]);
+    std::vector<int> products = productOfOtherIndices(input);
+    std::cout << "Products are: " << std::endl;
+    for (auto x: products) std::cout << x << " ";
     std::cout << std::endl;
 }
 
@@ -37,4 +40,15 @@ std::vector<int> productOfOtherIndices(std::vector<int> input){
         products[i] = newi;
     }
     return products;
+}
+
+std::vector<std::string> split(const std::string& s, char delimiter){
+   std::vector<std::string> tokens;
+   std::string token;
+   std::istringstream tokenStream(s);
+   while (std::getline(tokenStream, token, delimiter))
+   {
+      tokens.push_back(token);
+   }
+   return tokens;
 }
