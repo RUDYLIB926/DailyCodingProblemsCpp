@@ -50,7 +50,7 @@ int findSubstringFirstIndex(const std::string *parentstring, const std::string *
     const char *csubstring = substring->c_str();
 
     for (int i = 0; i < strlen(parentcstring); i++){
-        //std::cout << "i : " << i << " && parentcstring[i]: " << parentcstring[i] << " && csubstring[e]: " << csubstring[e] << " && e : " << e << std::endl;
+        
         if (parentcstring[i] == csubstring[e]){
             if (e == 0){ 
                 indx = i; 
@@ -58,8 +58,7 @@ int findSubstringFirstIndex(const std::string *parentstring, const std::string *
             if (e == strlen(csubstring)-1){ 
                 return indx;
             }
-            else
-                e++;
+            e++;
         }
     }
     return -1;
