@@ -7,6 +7,7 @@ class ProblemSelector
 {
     private:
         std::string _problemFilePath;
+        std::string _problemName;
 
     public:
         bool InitializeProblem();
@@ -14,6 +15,8 @@ class ProblemSelector
         void DisplayAllProblems();
 
         void SetNewProblem(std::string problemName);
+
+        void SetPath(std::string path);
 };
 
 #endif
