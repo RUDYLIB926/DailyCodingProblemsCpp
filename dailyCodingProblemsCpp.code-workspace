@@ -56,7 +56,9 @@
 			"iomanip": "cpp",
 			"list": "cpp",
 			"ratio": "cpp",
-			"vector": "cpp"
+			"vector": "cpp",
+			"numeric": "cpp",
+			"sstream": "cpp"
 		}
 	}
 }
