@@ -58,7 +58,9 @@
 			"ratio": "cpp",
 			"vector": "cpp",
 			"numeric": "cpp",
-			"sstream": "cpp"
+			"sstream": "cpp",
+			"map": "cpp",
+			"xtree": "cpp"
 		}
 	}
 }
